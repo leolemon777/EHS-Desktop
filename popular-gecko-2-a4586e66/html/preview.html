@@ -1,0 +1,1306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Halo Prism — Premium Plans Built on a Single Halo</title>
+    <link rel="stylesheet" href="../css/system.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"
+    />
+    <style>
+      /* ----- Page shell ----- */
+      body {
+        background:
+          radial-gradient(
+            720px 480px at 84% -10%,
+            rgba(151, 90, 244, 0.18) 0%,
+            rgba(151, 90, 244, 0) 70%
+          ),
+          radial-gradient(
+            640px 420px at -8% 14%,
+            rgba(47, 124, 248, 0.16) 0%,
+            rgba(47, 124, 248, 0) 65%
+          ),
+          radial-gradient(
+            900px 600px at 50% 110%,
+            rgba(120, 170, 250, 0.12) 0%,
+            rgba(120, 170, 250, 0) 70%
+          ),
+          var(--hp-color-pearl);
+        min-height: 100vh;
+      }
+
+      .page {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 28px 40px 96px;
+      }
+
+      /* ----- Nav ----- */
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 18px;
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(230, 228, 240, 0.9);
+        border-radius: var(--hp-radius-pill);
+        box-shadow: var(--hp-shadow-low);
+      }
+
+      .nav__brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--hp-font-display);
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        font-size: 1.0625rem;
+        color: var(--hp-color-ink);
+      }
+
+      .brand-mark {
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        background: var(--hp-gradient-halo);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        box-shadow: var(--hp-shadow-inset-highlight),
+          0 6px 16px -6px rgba(147, 76, 255, 0.45);
+        font-size: 16px;
+      }
+
+      .nav__links {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        margin: 0;
+        padding: 4px;
+        list-style: none;
+        background: rgba(245, 244, 251, 0.85);
+        border-radius: var(--hp-radius-pill);
+      }
+
+      .nav__links a {
+        display: inline-block;
+        padding: 8px 14px;
+        font-size: var(--hp-text-body-sm);
+        font-weight: 600;
+        color: var(--hp-color-muted);
+        text-decoration: none;
+        border-radius: var(--hp-radius-pill);
+        transition: color var(--hp-duration) var(--hp-ease),
+          background var(--hp-duration) var(--hp-ease);
+      }
+
+      .nav__links a:hover {
+        color: var(--hp-color-ink);
+      }
+
+      .nav__links a.is-active {
+        color: #fff;
+        background: var(--hp-gradient-halo-button);
+        box-shadow: var(--hp-shadow-inset-highlight),
+          0 6px 14px -6px rgba(147, 76, 255, 0.45);
+      }
+
+      .nav__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      /* ----- Hero ----- */
+      .hero {
+        position: relative;
+        margin-top: 56px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: 56px;
+        align-items: center;
+      }
+
+      .hero__chips {
+        display: inline-flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .hero__title {
+        font-family: var(--hp-font-display);
+        font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+        font-weight: 800;
+        line-height: 1.05;
+        letter-spacing: -0.015em;
+        color: var(--hp-color-ink);
+        margin: 18px 0 14px;
+      }
+
+      .hero__title .grad {
+        background: var(--hp-gradient-halo);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .hero__lede {
+        font-size: 1.0625rem;
+        line-height: 1.6;
+        color: var(--hp-color-muted);
+        max-width: 52ch;
+        margin: 0 0 24px;
+      }
+
+      .hero__ctas {
+        display: inline-flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .hero__signal {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: var(--hp-text-body-sm);
+        color: var(--hp-color-muted);
+      }
+
+      .avatar-stack {
+        display: inline-flex;
+      }
+
+      .avatar-stack span {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: var(--hp-gradient-halo);
+        border: 2px solid #fff;
+        margin-right: -8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-family: var(--hp-font-display);
+        font-weight: 700;
+        font-size: 11px;
+        box-shadow: var(--hp-shadow-inset-highlight);
+      }
+
+      .avatar-stack span:nth-child(2) {
+        background: linear-gradient(135deg, #2f7cf8, #78aafa);
+      }
+      .avatar-stack span:nth-child(3) {
+        background: linear-gradient(135deg, #934cff, #975af4);
+      }
+      .avatar-stack span:nth-child(4) {
+        background: linear-gradient(135deg, #20242c, #4a4f5d);
+      }
+
+      .hero__meta {
+        display: flex;
+        gap: 28px;
+        margin-top: 32px;
+        flex-wrap: wrap;
+      }
+
+      .hero__meta dt {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--hp-color-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin: 0 0 4px;
+      }
+
+      .hero__meta dd {
+        font-family: var(--hp-font-display);
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: var(--hp-color-ink);
+        letter-spacing: -0.01em;
+        margin: 0;
+      }
+
+      /* ----- Hero visual: stacked product preview ----- */
+      .hero__visual {
+        position: relative;
+        height: 480px;
+      }
+
+      .product-pane {
+        position: absolute;
+        inset: 0;
+        background: var(--hp-color-surface);
+        border: 1px solid var(--hp-color-hairline);
+        border-radius: var(--hp-radius-card);
+        box-shadow: var(--hp-shadow-high);
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .product-pane__topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .product-pane__title {
+        font-family: var(--hp-font-display);
+        font-weight: 700;
+        font-size: 1.0625rem;
+        color: var(--hp-color-ink);
+        margin: 0;
+      }
+
+      .product-pane__chip {
+        font-size: 0.6875rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #fff;
+        background: var(--hp-gradient-halo-button);
+        padding: 5px 10px;
+        border-radius: var(--hp-radius-pill);
+        box-shadow: var(--hp-shadow-inset-highlight);
+      }
+
+      .meter {
+        background: #f5f4fb;
+        border: 1px solid var(--hp-color-hairline);
+        border-radius: var(--hp-radius-lg);
+        padding: 14px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .meter__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size: var(--hp-text-body-sm);
+        color: var(--hp-color-muted);
+      }
+
+      .meter__value {
+        font-family: var(--hp-font-display);
+        font-weight: 800;
+        font-size: 1.625rem;
+        color: var(--hp-color-ink);
+        letter-spacing: -0.01em;
+      }
+
+      .meter__bar {
+        height: 8px;
+        border-radius: var(--hp-radius-pill);
+        background: #ecebf4;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .meter__bar::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: 72%;
+        background: var(--hp-gradient-halo-button);
+        border-radius: var(--hp-radius-pill);
+        box-shadow: var(--hp-shadow-inset-highlight);
+      }
+
+      .feature-row {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .feature-row__item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 14px;
+        border-radius: var(--hp-radius-lg);
+        background: #fbfaff;
+        border: 1px solid var(--hp-color-hairline);
+        font-size: var(--hp-text-body-sm);
+        color: var(--hp-color-ink);
+      }
+
+      .feature-row__item .icon-bub {
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        background: var(--hp-gradient-halo-soft);
+        color: var(--hp-color-iris-deep);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+
+      .feature-row__item .label {
+        flex: 1;
+        font-weight: 600;
+      }
+
+      .feature-row__item .value {
+        color: var(--hp-color-muted);
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .product-pane__cta {
+        display: flex;
+        gap: 10px;
+        margin-top: auto;
+      }
+
+      .floating-pill {
+        position: absolute;
+        right: -22px;
+        top: 32px;
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #fff;
+        border: 1px solid var(--hp-color-hairline);
+        border-radius: var(--hp-radius-pill);
+        padding: 10px 14px 10px 10px;
+        box-shadow: var(--hp-shadow-high);
+        font-size: var(--hp-text-body-sm);
+        font-weight: 600;
+        color: var(--hp-color-ink);
+      }
+
+      .floating-pill .dot {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: var(--hp-gradient-halo);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        box-shadow: var(--hp-shadow-inset-highlight);
+        font-size: 14px;
+      }
+
+      .floating-pill .delta {
+        color: var(--hp-color-success);
+        font-weight: 700;
+      }
+
+      .floating-card {
+        position: absolute;
+        left: -38px;
+        top: 200px;
+        width: 220px;
+        background: #fff;
+        border-radius: var(--hp-radius-card);
+        border: 1px solid var(--hp-color-hairline);
+        box-shadow: var(--hp-shadow-high);
+        padding: 14px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        z-index: 2;
+      }
+
+      .floating-card__title {
+        font-family: var(--hp-font-display);
+        font-weight: 700;
+        color: var(--hp-color-ink);
+        font-size: 0.9375rem;
+        margin: 0;
+      }
+
+      .floating-card__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: var(--hp-text-body-sm);
+        color: var(--hp-color-muted);
+      }
+
+      .floating-card__bars {
+        display: flex;
+        align-items: flex-end;
+        gap: 6px;
+        height: 48px;
+      }
+
+      .floating-card__bars span {
+        flex: 1;
+        background: var(--hp-gradient-halo);
+        border-radius: 4px 4px 2px 2px;
+        box-shadow: var(--hp-shadow-inset-highlight);
+        opacity: 0.85;
+      }
+      .floating-card__bars span:nth-child(1) { height: 30%; }
+      .floating-card__bars span:nth-child(2) { height: 52%; }
+      .floating-card__bars span:nth-child(3) { height: 40%; }
+      .floating-card__bars span:nth-child(4) { height: 72%; }
+      .floating-card__bars span:nth-child(5) { height: 60%; }
+      .floating-card__bars span:nth-child(6) { height: 95%; }
+      .floating-card__bars span:nth-child(7) { height: 80%; }
+
+      /* ----- Section heading ----- */
+      .section {
+        margin-top: 96px;
+      }
+
+      .section__head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+        margin-bottom: 40px;
+      }
+
+      .section__title {
+        font-family: var(--hp-font-display);
+        font-size: clamp(1.75rem, 3vw, 2.375rem);
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        color: var(--hp-color-ink);
+        margin: 0;
+        max-width: 24ch;
+      }
+
+      .section__lede {
+        font-size: 1rem;
+        color: var(--hp-color-muted);
+        max-width: 54ch;
+        margin: 0;
+      }
+
+      /* ----- Pricing ----- */
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .tier {
+        background: #fff;
+        border: 1px solid var(--hp-color-hairline);
+        border-radius: var(--hp-radius-card);
+        padding: 28px;
+        box-shadow: var(--hp-shadow-low);
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .tier__eyebrow {
+        font-family: var(--hp-font-body);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--hp-color-muted);
+      }
+
+      .tier__title {
+        font-family: var(--hp-font-display);
+        font-weight: 800;
+        font-size: 1.375rem;
+        color: var(--hp-color-ink);
+        letter-spacing: -0.01em;
+        margin: 0;
+      }
+
+      .tier__price {
+        display: flex;
+        align-items: baseline;
+        gap: 4px;
+        margin: 6px 0 4px;
+      }
+
+      .tier__amount {
+        font-family: var(--hp-font-display);
+        font-weight: 800;
+        font-size: 2.5rem;
+        color: var(--hp-color-ink);
+        letter-spacing: -0.015em;
+      }
+
+      .tier__unit {
+        font-size: var(--hp-text-body-sm);
+        color: var(--hp-color-muted);
+      }
+
+      .tier__desc {
+        font-size: var(--hp-text-body-sm);
+        color: var(--hp-color-muted);
+        margin: 0;
+      }
+
+      .tier__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        font-size: var(--hp-text-body-sm);
+        color: var(--hp-color-ink);
+      }
+
+      .tier__list li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .tier__list .check {
+        width: 22px;
+        height: 22px;
+        border-radius: 7px;
+        background: var(--hp-gradient-halo-soft);
+        color: var(--hp-color-iris-deep);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        flex-shrink: 0;
+      }
+
+      .tier__cta {
+        margin-top: auto;
+      }
+
+      /* Featured halo tier */
+      .tier--halo {
+        background: var(--hp-gradient-halo);
+        border: 0;
+        padding: 4px;
+        box-shadow: var(--hp-shadow-halo);
+        position: relative;
+        z-index: 1;
+        transform: translateY(-6px);
+      }
+
+      .tier--halo__band {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+        padding: 14px 18px 12px;
+      }
+
+      .tier--halo__inner {
+        background: var(--hp-color-ink);
+        border-radius: 26px;
+        padding: 24px 24px 28px;
+        color: #c9c8d0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .tier--halo__title {
+        font-family: var(--hp-font-display);
+        font-weight: 700;
+        font-size: 1.375rem;
+        color: #e9e8ef;
+        margin: 0;
+      }
+
+      .tier--halo__price {
+        display: flex;
+        align-items: baseline;
+        gap: 4px;
+        margin: 0;
+      }
+
+      .tier--halo__amount {
+        font-family: var(--hp-font-display);
+        font-weight: 800;
+        font-size: 2.625rem;
+        color: #fff;
+        letter-spacing: -0.015em;
+      }
+
+      .tier--halo__unit {
+        font-size: var(--hp-text-body-sm);
+        color: #838383;
+      }
+
+      .tier--halo__desc {
+        font-size: var(--hp-text-body-sm);
+        color: #a2a1a8;
+        margin: 0;
+      }
+
+      .tier--halo__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: var(--hp-text-body-sm);
+        color: #d4d3da;
+      }
+
+      .tier--halo__list li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .tier--halo__list .check {
+        width: 22px;
+        height: 22px;
+        border-radius: 7px;
+        background: rgba(120, 170, 250, 0.18);
+        color: var(--hp-color-sky-mist);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        flex-shrink: 0;
+      }
+
+      .tier--halo__cta {
+        margin-top: 6px;
+      }
+
+      /* ----- Workshop / form section ----- */
+      .workshop {
+        margin-top: 88px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: 40px;
+        align-items: stretch;
+      }
+
+      .workshop__card {
+        background: #fff;
+        border-radius: var(--hp-radius-card);
+        border: 1px solid var(--hp-color-hairline);
+        box-shadow: var(--hp-shadow-low);
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .workshop__head .hp-eyebrow {
+        color: var(--hp-color-iris-deep);
+      }
+
+      .workshop__title {
+        font-family: var(--hp-font-display);
+        font-weight: 800;
+        font-size: 1.625rem;
+        color: var(--hp-color-ink);
+        letter-spacing: -0.01em;
+        margin: 6px 0 8px;
+      }
+
+      .workshop__desc {
+        font-size: 0.9375rem;
+        color: var(--hp-color-muted);
+        margin: 0;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .form-grid--full {
+        grid-column: 1 / -1;
+      }
+
+      .checkbox-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .workshop__actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .workshop__actions .hp-help {
+        max-width: 32ch;
+      }
+
+      /* Workshop right side */
+      .specimen {
+        background: #fff;
+        border-radius: var(--hp-radius-card);
+        border: 1px solid var(--hp-color-hairline);
+        box-shadow: var(--hp-shadow-low);
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .specimen__title {
+        font-family: var(--hp-font-display);
+        font-weight: 700;
+        font-size: 1.125rem;
+        color: var(--hp-color-ink);
+        margin: 0;
+      }
+
+      .specimen__row {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .specimen__label {
+        font-size: 0.6875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--hp-color-muted);
+      }
+
+      .button-tray {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .chip-tray {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .swatch-row {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 8px;
+      }
+
+      .swatch {
+        aspect-ratio: 1 / 1;
+        border-radius: 14px;
+        border: 1px solid var(--hp-color-hairline);
+        position: relative;
+        overflow: hidden;
+        box-shadow: var(--hp-shadow-low);
+      }
+
+      .swatch span {
+        position: absolute;
+        left: 6px;
+        bottom: 6px;
+        font-family: var(--hp-font-body);
+        font-size: 9px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--hp-color-ink);
+        background: rgba(255, 255, 255, 0.85);
+        padding: 2px 6px;
+        border-radius: 6px;
+      }
+
+      .swatch.ink span,
+      .swatch.iris span,
+      .swatch.azure span,
+      .swatch.gradient span {
+        color: #fff;
+        background: rgba(22, 26, 32, 0.4);
+      }
+
+      .swatch.pearl { background: #f5f4fb; }
+      .swatch.surface { background: #ffffff; }
+      .swatch.ink { background: #161a20; }
+      .swatch.iris { background: #934cff; }
+      .swatch.azure { background: #2f7cf8; }
+      .swatch.gradient { background: var(--hp-gradient-halo); box-shadow: var(--hp-shadow-inset-highlight), var(--hp-shadow-low); }
+
+      /* ----- Footer band ----- */
+      .footer {
+        margin-top: 96px;
+        background: var(--hp-gradient-halo);
+        border-radius: 36px;
+        padding: 4px;
+        box-shadow: var(--hp-shadow-halo);
+      }
+
+      .footer__inner {
+        background: var(--hp-color-ink);
+        border-radius: 32px;
+        padding: 44px 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+
+      .footer__title {
+        font-family: var(--hp-font-display);
+        font-weight: 800;
+        font-size: 1.625rem;
+        color: #fff;
+        margin: 0 0 6px;
+        letter-spacing: -0.01em;
+      }
+
+      .footer__desc {
+        font-size: 0.9375rem;
+        color: #a2a1a8;
+        margin: 0;
+        max-width: 48ch;
+      }
+
+      .footer__cta {
+        display: inline-flex;
+        gap: 12px;
+      }
+
+      .footer__cta .hp-btn--secondary {
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+      }
+
+      .footer__cta .hp-btn--secondary:hover {
+        background: rgba(255, 255, 255, 0.14);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+      }
+
+      /* Phosphor icon sizing */
+      .ph {
+        font-size: inherit;
+        line-height: 1;
+      }
+
+      @media (max-width: 960px) {
+        .hero,
+        .workshop {
+          grid-template-columns: 1fr;
+        }
+        .hero__visual { height: auto; min-height: 420px; }
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+        .tier--halo {
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- ============ Nav ============ -->
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__brand" href="#">
+          <span class="brand-mark"><i class="ph ph-sparkle" aria-hidden="true"></i></span>
+          Halo Prism
+        </a>
+        <ul class="nav__links" role="list">
+          <li><a href="#" class="is-active">Plans</a></li>
+          <li><a href="#">Workspaces</a></li>
+          <li><a href="#">Insights</a></li>
+          <li><a href="#">Docs</a></li>
+        </ul>
+        <div class="nav__cta">
+          <button class="hp-btn hp-btn--ghost">Sign in</button>
+          <button class="hp-btn hp-btn--primary hp-btn--pill">
+            Start free <i class="ph ph-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- ============ Hero ============ -->
+      <section class="hero">
+        <div>
+          <div class="hero__chips">
+            <span class="hp-chip hp-chip--soft">
+              <i class="ph ph-sparkle" aria-hidden="true"></i> New · Halo billing v3
+            </span>
+            <span class="hp-chip">
+              <i class="ph ph-shield-check" aria-hidden="true"></i> SOC 2 type II
+            </span>
+          </div>
+
+          <h1 class="hero__title">
+            Pricing that wears the <span class="grad">halo</span>, not the hype.
+          </h1>
+          <p class="hero__lede">
+            One iridescent surface language, three deliberate tiers. Halo Prism lifts
+            premium plans with a glowing gradient frame, anchors them with calm pearl
+            cards, and reserves the dark contrast tile for your headline offer.
+          </p>
+
+          <div class="hero__ctas">
+            <button class="hp-btn hp-btn--primary hp-btn--lg hp-btn--pill">
+              See live plans <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+            </button>
+            <button class="hp-btn hp-btn--secondary hp-btn--lg hp-btn--pill">
+              <i class="ph ph-play-circle" aria-hidden="true"></i> Watch 2-min tour
+            </button>
+          </div>
+
+          <div class="hero__signal" style="margin-top:18px;">
+            <span class="avatar-stack" aria-hidden="true">
+              <span>HP</span><span>SK</span><span>JE</span><span>+9</span>
+            </span>
+            Trusted by 12,400+ revenue teams shipping premium tiers
+          </div>
+
+          <dl class="hero__meta">
+            <div>
+              <dt>Avg uplift</dt>
+              <dd>+34%</dd>
+            </div>
+            <div>
+              <dt>Tiers live</dt>
+              <dd>9,820</dd>
+            </div>
+            <div>
+              <dt>Setup</dt>
+              <dd>6 min</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Hero visual: product preview composition -->
+        <div class="hero__visual" aria-hidden="true">
+          <div class="floating-pill">
+            <span class="dot"><i class="ph ph-trend-up"></i></span>
+            MRR growth <span class="delta">+18.2%</span>
+          </div>
+
+          <div class="product-pane">
+            <header class="product-pane__topbar">
+              <h3 class="product-pane__title">Halo studio · Pricing canvas</h3>
+              <span class="product-pane__chip">Live</span>
+            </header>
+
+            <div class="meter">
+              <div class="meter__row">
+                <span>Conversion this week</span>
+                <span>+12.4%</span>
+              </div>
+              <div class="meter__value">$48,210</div>
+              <div class="meter__bar"></div>
+            </div>
+
+            <div class="feature-row">
+              <div class="feature-row__item">
+                <span class="icon-bub"><i class="ph ph-credit-card"></i></span>
+                <span class="label">Halo tier sessions</span>
+                <span class="value">3,142</span>
+              </div>
+              <div class="feature-row__item">
+                <span class="icon-bub"><i class="ph ph-users-three"></i></span>
+                <span class="label">Seats activated</span>
+                <span class="value">812</span>
+              </div>
+              <div class="feature-row__item">
+                <span class="icon-bub"><i class="ph ph-chart-line-up"></i></span>
+                <span class="label">Forecast Q3</span>
+                <span class="value">+22%</span>
+              </div>
+            </div>
+
+            <div class="product-pane__cta">
+              <button class="hp-btn hp-btn--primary hp-btn--block hp-btn--pill">
+                Publish pricing
+              </button>
+            </div>
+          </div>
+
+          <div class="floating-card">
+            <h4 class="floating-card__title">Halo plan · Last 7d</h4>
+            <div class="floating-card__row">
+              <span>Signups</span>
+              <strong style="color:var(--hp-color-ink); font-family:var(--hp-font-display);">486</strong>
+            </div>
+            <div class="floating-card__bars">
+              <span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Pricing ============ -->
+      <section class="section">
+        <header class="section__head">
+          <span class="hp-chip hp-chip--soft">
+            <i class="ph ph-tag-chevron" aria-hidden="true"></i> Tiering
+          </span>
+          <h2 class="section__title">Three tiers, one reusable halo</h2>
+          <p class="section__lede">
+            Use the pearl card for entry plans, the dark ink interior for your
+            featured tier, and keep the gradient reserved for halo borders, primary
+            CTAs, and the chip that anchors your premium offer.
+          </p>
+        </header>
+
+        <div class="pricing-grid">
+          <!-- Starter -->
+          <article class="tier">
+            <span class="tier__eyebrow">Starter</span>
+            <h3 class="tier__title">Studio</h3>
+            <p class="tier__price">
+              <span class="tier__amount">$24</span>
+              <span class="tier__unit">/ month</span>
+            </p>
+            <p class="tier__desc">For small teams shipping their first paid surface.</p>
+            <ul class="tier__list">
+              <li><span class="check"><i class="ph ph-check"></i></span> 3 workspaces</li>
+              <li><span class="check"><i class="ph ph-check"></i></span> Live pricing canvas</li>
+              <li><span class="check"><i class="ph ph-check"></i></span> Halo light theme</li>
+              <li><span class="check"><i class="ph ph-check"></i></span> Email support</li>
+            </ul>
+            <div class="tier__cta">
+              <button class="hp-btn hp-btn--secondary hp-btn--block">Start studio</button>
+            </div>
+          </article>
+
+          <!-- Halo (featured) -->
+          <article class="tier tier--halo">
+            <header class="tier--halo__band">
+              <span class="hp-eyebrow hp-eyebrow--italic">Most popular</span>
+              <i class="ph ph-sparkle" aria-hidden="true" style="font-size:20px;color:#fff;text-shadow:0 0 8px rgba(255,255,255,.55)"></i>
+            </header>
+            <div class="tier--halo__inner">
+              <h3 class="tier--halo__title">Professional</h3>
+              <p class="tier--halo__price">
+                <span class="tier--halo__amount">$98</span>
+                <span class="tier--halo__unit">/ month</span>
+              </p>
+              <p class="tier--halo__desc">Best for growing startups and growth companies.</p>
+              <ul class="tier--halo__list">
+                <li><span class="check"><i class="ph ph-check"></i></span> Unlimited workspaces</li>
+                <li><span class="check"><i class="ph ph-check"></i></span> Halo pricing tiles</li>
+                <li><span class="check"><i class="ph ph-check"></i></span> Advanced experiments</li>
+                <li><span class="check"><i class="ph ph-check"></i></span> Revenue forecasting</li>
+                <li><span class="check"><i class="ph ph-check"></i></span> Priority support</li>
+              </ul>
+              <div class="tier--halo__cta">
+                <button class="hp-btn hp-btn--on-ink hp-btn--block">
+                  Sign up with Pro <i class="ph ph-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Enterprise -->
+          <article class="tier">
+            <span class="tier__eyebrow">Enterprise</span>
+            <h3 class="tier__title">Scale</h3>
+            <p class="tier__price">
+              <span class="tier__amount">$240</span>
+              <span class="tier__unit">/ month</span>
+            </p>
+            <p class="tier__desc">For revenue teams running multi-brand portfolios.</p>
+            <ul class="tier__list">
+              <li><span class="check"><i class="ph ph-check"></i></span> SSO &amp; SCIM</li>
+              <li><span class="check"><i class="ph ph-check"></i></span> Custom halo themes</li>
+              <li><span class="check"><i class="ph ph-check"></i></span> Audit logs &amp; vaults</li>
+              <li><span class="check"><i class="ph ph-check"></i></span> Dedicated success</li>
+            </ul>
+            <div class="tier__cta">
+              <button class="hp-btn hp-btn--secondary hp-btn--block">Talk to sales</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ Workshop / Specimen ============ -->
+      <section class="workshop">
+        <div class="workshop__card">
+          <header class="workshop__head">
+            <span class="hp-eyebrow">Workspace setup</span>
+            <h2 class="workshop__title">Configure a halo workspace</h2>
+            <p class="workshop__desc">
+              Pick a starting tier, choose the surfaces you want lit by the gradient,
+              and ship a polished checkout in one afternoon.
+            </p>
+          </header>
+
+          <div class="hp-tabs" role="tablist" aria-label="Workspace size">
+            <button class="hp-tabs__btn is-active" role="tab" aria-selected="true">Solo</button>
+            <button class="hp-tabs__btn" role="tab">Team</button>
+            <button class="hp-tabs__btn" role="tab">Org</button>
+            <button class="hp-tabs__btn" role="tab">Agency</button>
+          </div>
+
+          <div class="form-grid">
+            <div class="hp-field">
+              <label class="hp-label" for="ws-name">Workspace name</label>
+              <div class="hp-input-wrap">
+                <i class="ph ph-buildings hp-icon" aria-hidden="true"></i>
+                <input
+                  id="ws-name"
+                  class="hp-input hp-input--with-icon"
+                  type="text"
+                  value="Halo Studio"
+                />
+              </div>
+            </div>
+
+            <div class="hp-field">
+              <label class="hp-label" for="ws-email">Billing email</label>
+              <div class="hp-input-wrap">
+                <i class="ph ph-envelope hp-icon" aria-hidden="true"></i>
+                <input
+                  id="ws-email"
+                  class="hp-input hp-input--with-icon"
+                  type="email"
+                  placeholder="billing@studio.app"
+                />
+              </div>
+            </div>
+
+            <div class="hp-field form-grid--full">
+              <label class="hp-label" for="ws-domain">Custom subdomain</label>
+              <div class="hp-input-wrap">
+                <i class="ph ph-link hp-icon" aria-hidden="true"></i>
+                <input
+                  id="ws-domain"
+                  class="hp-input hp-input--with-icon"
+                  type="text"
+                  value="halo.acme.app"
+                />
+              </div>
+              <span class="hp-help">SSL is auto-provisioned. Add a CNAME to finish.</span>
+            </div>
+          </div>
+
+          <div class="checkbox-stack">
+            <label class="hp-check">
+              <input type="checkbox" checked />
+              <span class="hp-check__box" aria-hidden="true"></span>
+              Use the halo tier as my featured pricing surface
+            </label>
+            <label class="hp-check">
+              <input type="checkbox" checked />
+              <span class="hp-check__box" aria-hidden="true"></span>
+              Enable usage-based add-ons
+            </label>
+            <label class="hp-check">
+              <input type="checkbox" />
+              <span class="hp-check__box" aria-hidden="true"></span>
+              Invite teammates after setup
+            </label>
+          </div>
+
+          <div class="workshop__actions">
+            <span class="hp-help">Halo workspaces are reversible — cancel anytime, no card needed.</span>
+            <div style="display:inline-flex;gap:10px;">
+              <button class="hp-btn hp-btn--ghost">Cancel</button>
+              <button class="hp-btn hp-btn--primary hp-btn--pill">
+                Create workspace <i class="ph ph-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="specimen" aria-label="System specimen">
+          <h3 class="specimen__title">Inside the system</h3>
+
+          <div class="specimen__row">
+            <span class="specimen__label">Buttons</span>
+            <div class="button-tray">
+              <button class="hp-btn hp-btn--primary">
+                <i class="ph ph-rocket-launch" aria-hidden="true"></i> Primary
+              </button>
+              <button class="hp-btn hp-btn--secondary">Secondary</button>
+              <button class="hp-btn hp-btn--ghost">Ghost</button>
+              <button class="hp-btn hp-btn--primary" disabled>Disabled</button>
+            </div>
+          </div>
+
+          <div class="specimen__row">
+            <span class="specimen__label">Chips</span>
+            <div class="chip-tray">
+              <span class="hp-chip hp-chip--gradient">
+                <i class="ph ph-crown" aria-hidden="true"></i> Halo
+              </span>
+              <span class="hp-chip hp-chip--soft">
+                <i class="ph ph-magic-wand" aria-hidden="true"></i> Polished
+              </span>
+              <span class="hp-chip">
+                <i class="ph ph-circle-half-tilt" aria-hidden="true"></i> Pearl
+              </span>
+              <span class="hp-chip">
+                <i class="ph ph-check-circle" aria-hidden="true"></i> Active
+              </span>
+            </div>
+          </div>
+
+          <div class="specimen__row">
+            <span class="specimen__label">Palette</span>
+            <div class="swatch-row">
+              <div class="swatch pearl"><span>Pearl</span></div>
+              <div class="swatch surface"><span>White</span></div>
+              <div class="swatch ink"><span>Ink</span></div>
+              <div class="swatch iris"><span>Iris</span></div>
+              <div class="swatch azure"><span>Azure</span></div>
+              <div class="swatch gradient"><span>Halo</span></div>
+            </div>
+          </div>
+
+          <div class="specimen__row">
+            <span class="specimen__label">Type</span>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <span style="font-family:var(--hp-font-display);font-weight:800;font-size:1.75rem;color:var(--hp-color-ink);letter-spacing:-0.015em;line-height:1;">Halo Prism</span>
+              <span style="font-family:var(--hp-font-body);font-weight:400;color:var(--hp-color-muted);font-size:0.875rem;">Manrope display · Inter body · Phosphor regular</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- ============ Footer / CTA band ============ -->
+      <section class="footer" aria-labelledby="ft-title">
+        <div class="footer__inner">
+          <div>
+            <h2 id="ft-title" class="footer__title">Light your premium tier with one halo.</h2>
+            <p class="footer__desc">
+              Drop the system into your existing stack. Plain CSS, semantic HTML,
+              and a token contract that survives Tailwind, vanilla extract, or
+              hand-written components.
+            </p>
+          </div>
+          <div class="footer__cta">
+            <button class="hp-btn hp-btn--secondary hp-btn--lg hp-btn--pill">
+              <i class="ph ph-book-open" aria-hidden="true"></i> Read the docs
+            </button>
+            <button class="hp-btn hp-btn--on-ink hp-btn--lg hp-btn--pill">
+              Open Halo studio <i class="ph ph-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+# Local preview / test artifacts
+.playwright-cli/
+output/
+
+# Local agent / editor scratch
+.zcode/
+.DS_Store
+Thumbs.db
+*.log
