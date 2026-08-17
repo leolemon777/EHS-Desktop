@@ -2,7 +2,7 @@
 
 **Uiverse Design System License v1**
 
-Halo Prism ("the Pack") is a commercial design-system package sold through
+Cirrus ("the Pack") is a commercial design-system package sold through
 Uiverse Design (design.uiverse.io). Copyright © 2026 Uiverse. All rights
 reserved.
 

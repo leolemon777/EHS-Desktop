@@ -1,11 +1,12 @@
 # 净水工厂 EHS Web
 
-面向净水工厂的 EHS 管理 Web 前端，界面基于项目内的 Halo Prism 设计系统实现。
+面向净水工厂的 EHS 管理 Web 前端，界面基于项目内的 Cirrus 设计系统实现。
 
 ## 当前内容
 
 - EHS 管理总览
 - 手持电动工具管理
+- 工具巡检
 - 能源数据管理
 - 人员证件管理
 - 危废存量管理
@@ -34,4 +35,4 @@ node server.mjs 4179
 - `assets/app.css`：EHS 页面样式
 - `assets/app.js`：页面渲染和本地交互
 - `server.mjs`：零依赖本地静态服务器
-- `popular-gecko-2-a4586e66/`：原始 Halo Prism 模板和设计说明
+- `cirrus/`：Cirrus 设计系统（token、组件与预览）

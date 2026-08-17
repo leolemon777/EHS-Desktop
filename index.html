@@ -3,26 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f5f4fb" />
+    <meta name="theme-color" content="#EDF2F7" />
     <title>净水工厂 EHS · 环境健康安全管理</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop stop-color='%23975af4'/%3E%3Cstop offset='.55' stop-color='%232f7cf8'/%3E%3Cstop offset='1' stop-color='%2378aafa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='url(%23g)'/%3E%3Cpath d='M32 13l3.8 12.2L48 29l-12.2 3.8L32 45l-3.8-12.2L16 29l12.2-3.8L32 13Z' fill='white'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="popular-gecko-2-a4586e66/css/system.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+    <link rel="icon" type="image/png" href="assets/images/brand-icon.png" />
+    <link rel="stylesheet" href="cirrus/css/system.css" />
     <link rel="stylesheet" href="assets/app.css" />
+    <script src="https://unpkg.com/lucide@0.511.0"></script>
   </head>
-  <body>
-    <div class="ambient ambient--one"></div>
-    <div class="ambient ambient--two"></div>
-
+  <body class="sky">
     <div class="app-shell">
       <aside class="sidebar" id="sidebar" aria-label="主导航">
         <a class="brand" href="#overview" aria-label="净水工厂 EHS 首页">
           <span class="brand__mark" aria-hidden="true">
-            <svg class="brand__helmet" viewBox="0 0 32 32" fill="none" role="img" aria-label="安全头盔">
-              <path d="M8 20.5v-3.1C8 12.76 11.58 9 16 9s8 3.76 8 8.4v3.1" fill="currentColor" fill-opacity=".96" />
-              <path d="M5 20.5h22v1.65c0 .97-.78 1.75-1.75 1.75H6.75C5.78 23.9 5 23.12 5 22.15V20.5Z" fill="currentColor" />
-              <path d="M16 9v11.5M9.2 15.6h13.6" stroke="#7657f4" stroke-width="1.6" stroke-linecap="round" opacity=".88" />
-            </svg>
+            <img class="brand__mark-img" src="assets/images/brand-icon.png" alt="" width="36" height="36" />
           </span>
           <span>
             <strong>净水工厂 EHS</strong>
@@ -33,32 +26,32 @@
         <nav class="side-nav">
           <p class="side-nav__label">工作台</p>
           <a class="side-nav__item is-active" href="#overview" data-route="overview">
-            <span class="side-nav__icon"><i class="ph ph-squares-four"></i></span><span>管理总览</span>
+            <span class="side-nav__icon"><i data-lucide="layout-grid"></i></span><span>管理总览</span>
           </a>
           <p class="side-nav__label">业务管理</p>
           <a class="side-nav__item" href="#tools" data-route="tools">
-            <span class="side-nav__icon"><i class="ph ph-wrench"></i></span><span>手持电动工具</span><b data-nav-count="tools" hidden></b>
+            <span class="side-nav__icon"><i data-lucide="wrench"></i></span><span>手持电动工具</span><b data-nav-count="tools" hidden></b>
           </a>
           <a class="side-nav__item" href="#inspections" data-route="inspections">
-            <span class="side-nav__icon"><i class="ph ph-clipboard-text"></i></span><span>工具巡检</span><b data-nav-count="inspections" hidden></b>
+            <span class="side-nav__icon"><i data-lucide="clipboard-list"></i></span><span>工具巡检</span><b data-nav-count="inspections" hidden></b>
           </a>
           <a class="side-nav__item" href="#energy" data-route="energy">
-            <span class="side-nav__icon"><i class="ph ph-lightning"></i></span><span>能源数据</span>
+            <span class="side-nav__icon"><i data-lucide="zap"></i></span><span>能源数据</span>
           </a>
           <a class="side-nav__item" href="#certificates" data-route="certificates">
-            <span class="side-nav__icon"><i class="ph ph-identification-card"></i></span><span>人员证件</span><b data-nav-count="certificates" hidden></b>
+            <span class="side-nav__icon"><i data-lucide="id-card"></i></span><span>人员证件</span><b data-nav-count="certificates" hidden></b>
           </a>
           <a class="side-nav__item" href="#waste" data-route="waste">
-            <span class="side-nav__icon"><i class="ph ph-recycle"></i></span><span>危废存量</span><b data-nav-count="waste" hidden></b>
+            <span class="side-nav__icon"><i data-lucide="recycle"></i></span><span>危废存量</span><b data-nav-count="waste" hidden></b>
           </a>
           <a class="side-nav__item" href="#chemicals" data-route="chemicals">
-            <span class="side-nav__icon"><i class="ph ph-flask"></i></span><span>化学品管理</span>
+            <span class="side-nav__icon"><i data-lucide="flask-conical"></i></span><span>化学品管理</span>
           </a>
         </nav>
 
         <div class="sidebar__footer">
           <div class="progress-card">
-            <span class="hp-chip hp-chip--soft"><i class="ph ph-shield-check"></i> 合规进度</span>
+            <span class="chip"><i data-lucide="shield-check" class="icon"></i> 合规进度</span>
             <strong>尚未配置合规任务</strong>
             <div class="progress-track"><span style="width: 0"></span></div>
             <small>等待录入真实业务数据</small>
@@ -66,7 +59,7 @@
           <button class="user-card" type="button">
             <span class="avatar">安</span>
             <span><strong>安全管理员</strong><small>EHS 管理员</small></span>
-            <i class="ph ph-dots-three"></i>
+            <i data-lucide="more-horizontal"></i>
           </button>
         </div>
       </aside>
@@ -76,36 +69,36 @@
       <main class="main-shell">
         <header class="topbar">
           <button class="icon-btn mobile-only" id="menuButton" type="button" aria-label="打开导航">
-            <i class="ph ph-list"></i>
+            <i data-lucide="menu"></i>
           </button>
           <div class="global-search">
-            <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+            <i data-lucide="search" aria-hidden="true"></i>
             <input id="globalSearch" type="search" placeholder="搜索人员、工具、化学品..." autocomplete="off" aria-label="全局搜索" aria-expanded="false" aria-controls="searchPanel" />
-            <button class="search-clear" id="searchClearButton" type="button" aria-label="清除搜索" hidden><i class="ph ph-x"></i></button>
+            <button class="search-clear" id="searchClearButton" type="button" aria-label="清除搜索" hidden><i data-lucide="x"></i></button>
             <kbd>Ctrl K</kbd>
             <div class="search-panel" id="searchPanel" hidden></div>
           </div>
           <div class="topbar__actions">
-            <span class="sync-state"><i class="ph ph-cloud-check"></i> 本地数据已保存</span>
-            <button class="icon-btn" id="helpButton" type="button" aria-label="帮助" aria-expanded="false"><i class="ph ph-question"></i></button>
-            <button class="icon-btn" id="notificationButton" type="button" aria-label="通知" aria-expanded="false"><i class="ph ph-bell"></i></button>
-            <button class="hp-btn hp-btn--primary" id="quickAddButton" type="button">
-              <i class="ph ph-plus"></i><span>新增记录</span>
+            <span class="sync-state"><i data-lucide="badge-check"></i> 本地数据已保存</span>
+            <button class="icon-btn" id="helpButton" type="button" aria-label="帮助" aria-expanded="false"><i data-lucide="circle-help"></i></button>
+            <button class="icon-btn" id="notificationButton" type="button" aria-label="通知" aria-expanded="false"><i data-lucide="bell"></i></button>
+            <button class="btn btn-primary" id="quickAddButton" type="button">
+              <i data-lucide="plus" class="icon"></i><span>新增记录</span>
             </button>
             <section class="top-popover" id="notificationPanel" aria-label="通知中心" hidden>
-              <header><div><span class="hp-chip hp-chip--soft">通知中心</span><h2>需要你处理</h2></div><button class="panel-close" type="button" data-close-popover aria-label="关闭通知"><i class="ph ph-x"></i></button></header>
+              <header><div><h2>需要你处理</h2></div><button class="panel-close" type="button" data-close-popover aria-label="关闭通知"><i data-lucide="x"></i></button></header>
               <div class="notification-empty">
-                <i class="ph ph-bell-slash"></i>
+                <i data-lucide="bell-off"></i>
                 <strong>当前没有待处理通知</strong>
                 <small>录入真实业务数据后，提醒会显示在这里。</small>
               </div>
             </section>
             <section class="top-popover help-popover" id="helpPanel" aria-label="快捷帮助" hidden>
-              <header><div><span class="hp-chip hp-chip--soft">快捷帮助</span><h2>操作提示</h2></div><button class="panel-close" type="button" data-close-popover aria-label="关闭帮助"><i class="ph ph-x"></i></button></header>
+              <header><div><h2>操作提示</h2></div><button class="panel-close" type="button" data-close-popover aria-label="关闭帮助"><i data-lucide="x"></i></button></header>
               <div class="shortcut-list">
                 <span><kbd>Ctrl</kbd><kbd>K</kbd><strong>打开全局搜索</strong></span>
                 <span><kbd>Esc</kbd><strong>关闭当前浮层</strong></span>
-                <span><i class="ph ph-cloud-check"></i><strong>新增与编辑自动保存在本机</strong></span>
+                <span><i data-lucide="badge-check"></i><strong>新增与编辑自动保存在本机</strong></span>
               </div>
             </section>
           </div>
@@ -119,18 +112,17 @@
       <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <header class="modal__header">
           <div>
-            <span class="hp-chip hp-chip--soft" id="modalEyebrow">快速录入</span>
             <h2 id="modalTitle">新增记录</h2>
           </div>
           <button class="icon-btn" id="closeModalButton" type="button" aria-label="关闭弹窗">
-            <i class="ph ph-x"></i>
+            <i data-lucide="x"></i>
           </button>
         </header>
         <form id="recordForm">
           <div class="modal__body" id="modalFields"></div>
           <footer class="modal__footer">
-            <button class="hp-btn hp-btn--ghost" id="cancelModalButton" type="button">取消</button>
-            <button class="hp-btn hp-btn--primary" type="submit"><i class="ph ph-check"></i> 保存记录</button>
+            <button class="btn btn-ghost" id="cancelModalButton" type="button">取消</button>
+            <button class="btn btn-primary" type="submit"><i data-lucide="check" class="icon"></i> 保存记录</button>
           </footer>
         </form>
       </section>
@@ -139,31 +131,31 @@
     <div class="drawer-backdrop" id="detailBackdrop" hidden></div>
     <aside class="detail-drawer" id="detailDrawer" aria-labelledby="detailTitle" aria-hidden="true" inert hidden>
       <header class="detail-drawer__header">
-        <div><span class="hp-chip hp-chip--soft" id="detailEyebrow">记录详情</span><h2 id="detailTitle">记录详情</h2></div>
-        <button class="icon-btn" id="closeDetailButton" type="button" aria-label="关闭详情"><i class="ph ph-x"></i></button>
+        <div><h2 id="detailTitle">记录详情</h2></div>
+        <button class="icon-btn" id="closeDetailButton" type="button" aria-label="关闭详情"><i data-lucide="x"></i></button>
       </header>
       <div class="detail-drawer__body" id="detailBody"></div>
       <footer class="detail-drawer__footer">
-        <button class="hp-btn hp-btn--secondary danger-button" id="deleteRecordButton" type="button"><i class="ph ph-trash"></i> 删除</button>
-        <button class="hp-btn hp-btn--secondary" id="printRecordButton" type="button" hidden><i class="ph ph-printer"></i> 打印表格</button>
-        <button class="hp-btn hp-btn--primary" id="editRecordButton" type="button"><i class="ph ph-pencil-simple"></i> 编辑记录</button>
+        <button class="btn btn-secondary danger-button" id="deleteRecordButton" type="button"><i data-lucide="trash-2" class="icon"></i> 删除</button>
+        <button class="btn btn-secondary" id="printRecordButton" type="button" hidden><i data-lucide="printer" class="icon"></i> 打印表格</button>
+        <button class="btn btn-primary" id="editRecordButton" type="button"><i data-lucide="pencil" class="icon"></i> 编辑记录</button>
       </footer>
     </aside>
 
     <div class="modal-backdrop" id="confirmModal" hidden>
       <section class="confirm-card" role="alertdialog" aria-modal="true" aria-labelledby="confirmTitle" aria-describedby="confirmMessage">
-        <span class="confirm-card__icon"><i class="ph ph-warning"></i></span>
+        <span class="confirm-card__icon"><i data-lucide="triangle-alert"></i></span>
         <h2 id="confirmTitle">确认删除这条记录？</h2>
         <p id="confirmMessage">删除后仍可在短时间内撤销。</p>
         <div class="confirm-card__actions">
-          <button class="hp-btn hp-btn--secondary" id="cancelDeleteButton" type="button">取消</button>
-          <button class="hp-btn danger-primary" id="confirmDeleteButton" type="button"><i class="ph ph-trash"></i> 确认删除</button>
+          <button class="btn btn-secondary" id="cancelDeleteButton" type="button">取消</button>
+          <button class="btn danger-primary" id="confirmDeleteButton" type="button"><i data-lucide="trash-2" class="icon"></i> 确认删除</button>
         </div>
       </section>
     </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite" hidden>
-      <span class="toast__icon"><i class="ph ph-check"></i></span>
+      <span class="toast__icon"><i data-lucide="check"></i></span>
       <span><strong id="toastTitle">保存成功</strong><small id="toastMessage">记录已写入本地数据</small></span>
       <button class="toast__action" id="toastAction" type="button" hidden>撤销</button>
     </div>
